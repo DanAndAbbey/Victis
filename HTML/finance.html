@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/finance.css" type="text/css">
+    <title>Finance | Victis Technologies</title>
+</head>
+<body>
+    <header>
+        <div id="title-left"><p>Victis Technologies</p></div>
+        <nav>
+            <ul>
+                <li><a id="nav" href="index.html">Home</a></li>
+                <li><a id="nav" href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <p>We are working to bring you a large kit of free tools to make your financial life easier.</p>
+    </section>
+    <section id="form-container">
+        <h2>Dividend Calculator</h2>
+        <form id="form" action="post">
+            <label for="symbol">Stock Symbol</label>
+            <input type="text" id="symbol">
+            <label for="price">Price</label>
+            <input type="text" id="price">
+            <label for="quantity">Quantity</label>
+            <input type="text" id="quantity">
+            <label for="yield">Yield</label>
+            <input type="text" id="yield">
+            <label for="growth">% Expected Yearly Growth</label>
+            <input type="text" id="growth">
+            <label for="years">How Many Years</label>
+            <input type="text" id="years">
+            <label for="frequency">Disbursement Frequency</label>
+            <select name="frequency" id="frequency">
+                <option value="" selected>[Select One]</option>
+                <option value="monthly">Monthly</option>
+                <option value="quarterly">Quarterly</option>
+                <option value="yearly">Yearly</option>
+            </select>
+            <div id="submitReset">
+                <input id="submit" type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+        </section>
+    </form>   
+    <footer><p><a href="./index.html">Victis Technologies &#169 2022-2023</a></p></footer>
+</body>
+<script src="../Scripts/finance.js"></script>
+</html>
