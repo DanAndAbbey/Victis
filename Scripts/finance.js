@@ -16,18 +16,31 @@ window,addEventListener("DOMContentLoaded", function(e){
         }
 
         function disFrequency(freq){
-            if (freq === monthly){
+            if (freq === "monthly"){
                 return 12
             }
-            else if (freq === quarterly){
+            else if (freq === "quarterly"){
                 return 4
             }
-            else if (freq === yearly){
+            else if (freq === "yearly"){
                 return 1
             }
         }
+        
+        let yield = parseFloat(stock.yield) * .01;
+        let distributions = parseFloat(stock.years * (disFrequency(stock.frequency)));
+        let cost = parseFloat(stock.price * stock.quantity);
+        let value = 0
 
-        let cost = parseFloat(stock.price * stock.quantity)
+        for (let i =0; i < 1; i++){
+                value = (cost * yield) + cost
+        }
+        
+        for (let i =1; i < distributions; i++){
+            value *= yield
+        }
+
+        console.log(value)
 
 
 })});

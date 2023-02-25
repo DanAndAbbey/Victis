@@ -110,19 +110,19 @@ a:hover{
 
 #about-main{
     flex-direction: column;
+    background-color: #eeedee;
 }
 
 
 #about{
     background-color: #fff;
     padding-top: 3em;
-    padding-bottom: 2em;
+    padding-bottom: 3em;
     padding-left: 1em;
     padding-right: 1em;
 }
 
 #about-projects{
-    background-color: #eeedee;
     display: flex;
     flex-direction: column;
     padding-bottom: 3em;
@@ -167,19 +167,27 @@ button:hover{
 }
 
 #who{
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 4em;
+    padding-top: 8em;
+    padding-bottom: 8em;
     padding-left: 1em;
     padding-right: 1em;
-    margin-bottom: 5em;
 }
 
 #contact{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin-bottom: 5em;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+#email-container{
+    display: flex;
+    justify-content: center;
 }
 
 .email{
@@ -189,7 +197,6 @@ button:hover{
 .email:hover{
     color: #000000;
 }
-
 
 /*desktop*/
 @media screen and (min-width: 1080px) {

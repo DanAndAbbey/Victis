@@ -47,12 +47,12 @@ window,addEventListener("DOMContentLoaded", function(e){
 
     function retrieveLinkText(project){
    
-        if (project === "drones") {
-            return("Take a look at our work with drones")
+        if (project === "finance") {
+            return("See more about what we're working on in the field of finance")
         }
     
-        else if (project === "finance") {
-            return("See more about what we're working on in the field of finance")
+        else if (project === "drones") {
+            return("Take a look at our work with drones")
         }
     
         else if (project === "webdev") {
