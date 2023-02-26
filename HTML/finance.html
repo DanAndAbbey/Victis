@@ -12,7 +12,7 @@
 </head>
 <body>
     <header>
-        <div id="title-left"><p>Victis Technologies</p></div>
+        <div id="title-left"><p id="title">Victis Technologies</p></div>
         <nav>
             <ul>
                 <li><a id="nav" href="index.html">Home</a></li>
@@ -26,16 +26,14 @@
     <section id="form-container">
         <h2>Dividend Calculator</h2>
         <form id="form" action="post">
-            <label for="symbol">Stock Symbol</label>
+            <label for="symbol">Ticker Symbol</label>
             <input type="text" id="symbol">
             <label for="price">Price</label>
             <input type="text" id="price">
             <label for="quantity">Quantity</label>
             <input type="text" id="quantity">
-            <label for="yield">Yield</label>
+            <label for="yield">Yield (Yearly Percentage)</label>
             <input type="text" id="yield">
-            <label for="growth">% Expected Yearly Growth</label>
-            <input type="text" id="growth">
             <label for="years">How Many Years</label>
             <input type="text" id="years">
             <label for="frequency">Disbursement Frequency</label>
@@ -49,8 +47,9 @@
                 <input id="submit" type="submit" value="Submit">
                 <input type="reset" value="Reset">
             </div>
+        </form> 
         </section>
-    </form>   
+        <p id="result"></p>  
     <footer><p><a href="./index.html">Victis Technologies &#169 2022-2023</a></p></footer>
 </body>
 <script src="../Scripts/finance.js"></script>

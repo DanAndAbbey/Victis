@@ -2,8 +2,8 @@
 
 :root {
     font-family:  'lato', sans-serif;
-    width: 100%;
-    height: auto;
+    min-height: auto;
+    min-width: auto;
     font-size: 1.5em;
     color: #000000;
 }
@@ -13,7 +13,7 @@ body{
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
-    max-width: 100%;
+    min-width: 100%;
     left: 0;
     line-height: 1.5;
     min-height: 100vh;
@@ -24,6 +24,7 @@ main{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    min-width: 100%;
     gap: 1em;
 }
 
@@ -31,7 +32,7 @@ header{
     display: flex;
     background-color: #fff;
     position: relative;
-    width: 100%;
+    min-width: 100%;
     top: 0;
     left: 0;
     flex-direction: column;
@@ -50,17 +51,25 @@ footer{
 
 h2{
     text-align: center;
+}
 
+#title{
+    transition: color 4s .1s;
+}
+
+#title:hover{
+    color: aqua;
 }
 
 
 #title-left{
+    font-size: 1.5em;
     text-align: center;
     justify-content: center;
     display: relative;
-    font-size: 1.5em;
     flex-wrap: wrap;
 }
+
 
 nav{
     width: 100%;
@@ -86,7 +95,7 @@ nav > ul > li {
 }
 
 a{
-    color: black;
+    color: #000000;
     text-decoration: none;
 }
 
@@ -171,8 +180,8 @@ button:hover{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 8em;
-    padding-bottom: 8em;
+    padding-top: 3em;
+    padding-bottom: 14em;
     padding-left: 1em;
     padding-right: 1em;
 }
@@ -182,7 +191,7 @@ button:hover{
     flex-direction: column;
     justify-content: center;
     justify-content: center;
-    margin-bottom: 2em;
+    margin-bottom: 3em;
 }
 
 #email-container{
@@ -190,12 +199,16 @@ button:hover{
     justify-content: center;
 }
 
-.email{
+#email{
     color: #808080;
 }
 
-.email:hover{
+#email:hover{
     color: #000000;
+}
+#email:visited{
+    color: #000000;
+
 }
 
 /*desktop*/

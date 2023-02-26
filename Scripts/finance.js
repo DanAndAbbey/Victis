@@ -5,15 +5,14 @@ window,addEventListener("DOMContentLoaded", function(e){
 
         e.preventDefault();
 
-        let stock = {
-            symbol: document.getElementById("symbol").value,
-            price: document.getElementById("price").value,
-            quantity: document.getElementById("quantity").value,
-            yield: document.getElementById("yield").value,
-            growth: document.getElementById("growth").value,
-            years: document.getElementById("years").value,
-            frequency: document.getElementById("frequency").value
-        }
+        let stock = []
+            stock.push(document.getElementById("symbol").value);
+            stock.push(document.getElementById("price").value);
+            stock.push(document.getElementById("quantity").value);
+            stock.push(document.getElementById("yield").value);
+            stock.push(document.getElementById("years").value);
+            stock.push( document.getElementById("frequency").value);
+        
 
         function disFrequency(freq){
             if (freq === "monthly"){
@@ -27,20 +26,15 @@ window,addEventListener("DOMContentLoaded", function(e){
             }
         }
         
-        let yield = parseFloat(stock.yield) * .01;
-        let distributions = parseFloat(stock.years * (disFrequency(stock.frequency)));
-        let cost = parseFloat(stock.price * stock.quantity);
-        let value = 0
+        let yield = (parseFloat(stock[3]) * .01)/disFrequency(stock[5]);
+        let distributions = parseInt(stock[4] * (disFrequency(stock[5])));
+        let cost = parseFloat(stock[1] * stock[2]);
+        let value = cost
 
-        for (let i =0; i < 1; i++){
-                value = (cost * yield) + cost
-        }
-        
-        for (let i =1; i < distributions; i++){
-            value *= yield
+        for (let i = 0; i < distributions; i++){
+            value = (yield * value) + value
         }
 
-        console.log(value)
-
+        document.getElementById("result").textContent=`Your shares of ${stock[0].toUpperCase()} will be worth $${value.toFixed(2)} in ${stock[4]} years.`
 
 })});
