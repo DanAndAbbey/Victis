@@ -7,50 +7,107 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/styles.css" type="text/css">
     <link rel="stylesheet" href="../CSS/finance.css" type="text/css">
     <title>Finance | Victis Technologies</title>
 </head>
 <body>
+
+    
     <header>
         <div id="title-left"><p id="title">Victis Technologies</p></div>
         <nav>
-            <ul>
-                <li><a id="nav" href="index.html">Home</a></li>
-                <li><a id="nav" href="about.html">About</a></li>
-            </ul>
+            <button data-link="index" class="nav-button">Home</button>
+            <button data-link="about" class="nav-button">About</button>
+            <div id="dropbtn">
+                <button class="nav-button">Projects</button>
+                    <div id="drop">
+                        <button class="project-button" data-link="finance">Finance</button>
+                        <button class="project-button" data-link="drones">Drones</button>
+                        <button class="project-button" data-link="projects">Projects</button>
+                    </div>
+            </div>
         </nav>
     </header>
-    <section>
+    <content>
+
         <p>We are working to bring you a large kit of free tools to make your financial life easier.</p>
-    </section>
+
     <section id="form-container">
-        <h2>Dividend Calculator</h2>
+
+<!--intro-->
+
+        <form id="intro">
+            <p>Would you like to compare multiple securites or just see the results of one?</p>
+            <div id="oneormore">
+                <button data-amount="one" class="howmany">one</button>
+                <button data-amount="multiple" class="howmany">multiple</button>
+            </div>
+        </form>
+
+<!--form-->
+
         <form id="form" action="post">
-            <label for="symbol">Ticker Symbol</label>
-            <input type="text" id="symbol">
-            <label for="price">Price</label>
-            <input type="text" id="price">
-            <label for="quantity">Quantity</label>
-            <input type="text" id="quantity">
-            <label for="yield">Yield (Yearly Percentage)</label>
-            <input type="text" id="yield">
-            <label for="years">How Many Years</label>
-            <input type="text" id="years">
-            <label for="frequency">Disbursement Frequency</label>
-            <select name="frequency" id="frequency">
-                <option value="" selected>[Select One]</option>
-                <option value="monthly">Monthly</option>
-                <option value="quarterly">Quarterly</option>
-                <option value="yearly">Yearly</option>
-            </select>
+
+            <h2>Dividend Calculator</h2>
+            <div id="form-top" class="form-elements">
+                <label for="symbol">Ticker Symbol</label>
+                <input type="text" id="symbol">
+            </div class="form-elements">
+
+            <div id="form-center">
+                
+                <div id="form-center-top">
+                    <div class="form-elements">
+                            <label for="price">Price</label>
+                            <input type="text" id="price">
+                    </div>
+                    <div class="form-elements">
+                        <label for="quantity">Quantity</label>
+                        <input type="text" id="quantity">
+                    </div>
+                </div>
+               
+                <div id="form-center-bottom">
+                    <div class="form-elements">
+                        <label for="yield">Yield (Yearly Percentage)</label>
+                        <input type="text" id="yield">
+                    </div>
+                
+
+                    <div class="form-elements">
+                        <label for="years">How Many Years</label>
+                        <input type="text" id="years">
+                    </div>
+                </div>
+            </div>
+
+            <div id="form-bottom" class="form-elements">
+                <label for="frequency">Disbursement Frequency</label>
+                <select name="frequency" id="frequency">
+                    <option value="" selected>[Select One]</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="quarterly">Quarterly</option>
+                    <option value="yearly">Yearly</option>
+                </select>
+            </div>
+
             <div id="submitReset">
-                <input id="submit" type="submit" value="Submit">
-                <input type="reset" value="Reset">
+                <button id="add">Add More</button>
+                <button onclick="stop();" id="submit">Submit</button>
+                <button type="reset" value="Reset">Reset</button>
             </div>
         </form> 
-        </section>
+    </section>
+    </content>
+
+
+
         <p id="result"></p>  
-    <footer><p><a href="./index.html">Victis Technologies &#169 2022-2023</a></p></footer>
+        <p id="income-result"></p> 
+    <footer><p id="footer">Victis Technologies &#169 2022-2023</p></footer>
 </body>
 <script src="../Scripts/finance.js"></script>
+<script src="../Scripts/script.js"></script>
+
 </html>
