@@ -1,46 +1,53 @@
 let app = {
     list:[],
-    amountOfTimes: ""
 };
 
-window,addEventListener("DOMContentLoaded", function(e){
+let selectedButton = document.querySelectorAll("button");
+selectedButton.forEach(function(button){
+    button.addEventListener("click",function(e){
+        e.preventDefault();
+        let button = e.currentTarget;
 
-    main();
-    
+        document.getElementById("intro").style.display="none";
+        document.getElementById("form").style.display="flex";
+
+        let action = button.id
+
+        if (action === "one")
+            listen()
+
+
+        else if (action === "multiple"){
+            document.getElementById("done").style.display="flex";
+            listen()
+        }
+
+    });
 });
 
 //intro
-    function main(){
 
-        let selectedButton = document.querySelectorAll("button[data-amount]");
-        selectedButton.forEach(function(button){
-            button.addEventListener("click",function(e){
-                let button = e.currentTarget;
-                app.amountOfTimes = button.getAttribute("data-amount");
 
-                document.getElementById("intro").style.display="none";
-                document.getElementById("form").style.display="flex";
-                e.preventDefault();
-
-                if (app.amountOfTimes === "multiple"){
-                    document.getElementById("done").style.display="flex";
-                }
-            });
-        });
-        listen()
-        alert("here")
-    };
 
     function listen(){
 
-        let done = document.getElementById("done");
-        done.addEventListener("click",function(){
-            repeat();
+        let selectedButton = document.querySelectorAll("button");
+        selectedButton.forEach(function(button){
+            button.addEventListener("click",function(e){
+                e.preventDefault();
+                let button = e.currentTarget;
 
-        });
-        let submit = document.getElementById("submit");
-        submit.addEventListener("click",function(){
-            submit();
+                let action = button.id
+
+                if (action === "done")
+                    repeat();
+        
+                else if (action === "submit"){
+                    document.getElementById("done").style.display="flex";
+                    submit();
+                }
+
+            });
         });
 
     }
@@ -62,7 +69,6 @@ window,addEventListener("DOMContentLoaded", function(e){
 
 
     function readStock(){
-
         let stock = {
             symbol: document.getElementById("symbol").value,
             price: document.getElementById("price").value,
@@ -110,15 +116,17 @@ window,addEventListener("DOMContentLoaded", function(e){
 //print results
 
     function print(){
+        const end = document.getElementById("result");
         document.getElementById("intro").style.display="none";
         document.getElementById("form").style.display="none";
         document.getElementById("end").style.display="flex";
         
-        app.list.forEach(function(e){
-            ticker =e[0],
-            finalValue = e[1],
-            years = e[2]
+        app.list.forEach(function(stock){
+            ticker =stock[0],
+            finalValue = stock[1],
+            years = stock[2]
 
-        document.getElementById("result").textContent=`Your shares of ${ticker.toUpperCase()} will be worth $${finalValue.toFixed(2)} in ${years} years.`;
+        let message = `Your shares of ${ticker.toUpperCase()} will be worth $${finalValue.toFixed(2)} in ${years} years.`;
+        end.append(message);
         });
     };

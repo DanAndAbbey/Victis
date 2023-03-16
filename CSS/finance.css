@@ -76,11 +76,6 @@ form{
     display: none;
 }
 
-
-#result{
-    padding-top: 3em;
-}
-
 /*desktop*/
 @media screen and (min-width: 1080px) {
     
