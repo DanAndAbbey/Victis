@@ -1,93 +1,81 @@
+
 window,addEventListener("DOMContentLoaded", function(e){
 
     let app ={
         list:[],
-        num:1
+        amountOfTimes: "",
+        printList:[]
     };
 
+
+    main();
 
 //intro
 
-    let selectedButton = document.querySelectorAll("button[data-amount]");
-        selectedButton.forEach(function(button){
-            button.addEventListener("click",function(e){
-                let button = e.currentTarget;
-                let amount = button.getAttribute("data-amount");
-                e.preventDefault()
+    function main(){
 
-                
-                switchForm(amount)
-        });
-    });
+        whichForm();
 
-    function switchForm(amount){
-        document.getElementById("intro").style.display="none";
-        document.getElementById("form").style.display="flex";
-        e.preventDefault()
+        if (app.amountOfTimes === "multiple"){
 
-        if (amount === "multiple"){
-            document.getElementById("add").style.display="flex";
-            e.preventDefault()
-            multipleStocks()
-            app.num = 2
-
+            multiple();
+        }
+        else if (app.amountOfTimes === "once"){
+            readStock()
+            submitForm();
         }
 
-        else{
-            oneStock()
+        else if (app.amountOfTimes === "done"){
+            submitForm()
         }
+
     };
 
+    function whichForm() {
+        
 
+        let selectedButton = document.querySelectorAll("button[data-amount]");
+            selectedButton.forEach(function(button){
+                button.addEventListener("click",function(e){
+                    let button = e.currentTarget;
+                    app.amountOfTimes = button.getAttribute("data-amount");
+                    e.preventDefault()
 
+                    document.getElementById("intro").style.display="none";
+                    document.getElementById("form").style.display="flex";
+                    e.preventDefault();
 
-//one
+                    if (app.amountOfTimes === "multiple"){
+                        document.getElementById("done").style.display="flex";
+                        e.preventDefault();
+        
+                    };
+            });
+        });
+    };
 
-    function oneStock(){
+    function multiple(){
 
         let submit = document.getElementById("submit");
         submit.addEventListener("click",function(e){
+            e.preventDefault();
+            pp.printList
+            stock = readStock();
+            addToList(stock);
 
+        });
+
+        let done = document.getElementById("done");
+        done.addEventListener("click",function(e){
             e.preventDefault();
 
-            let stock = {
-                symbol: document.getElementById("symbol").value,
-                price: document.getElementById("price").value,
-                quantity: document.getElementById("quantity").value,
-                yield: document.getElementById("yield").value,
-                years: document.getElementById("years").value,
-                frequency: document.getElementById("frequency").value
-            };
+            app.amountOfTimes = "done"
+            
+        });
+    };
+    
 
-    addToList(stock);
-        
-})};
-
-
-
-
-
-
-
-
-
-
-
-
-function addToList(stock){
-    console.log(stock) 
-    document.getElementById("form").reset();
-    app.list.push(stock);
-     
-    if (app.num===1){
-        submitForm();
-    }    
-        
-};
-
-//multiple
-
-    function multipleStocks(){
+    function readStock(){
 
         let stock = {
             symbol: document.getElementById("symbol").value,
@@ -96,53 +84,16 @@ function addToList(stock){
             yield: document.getElementById("yield").value,
             years: document.getElementById("years").value,
             frequency: document.getElementById("frequency").value
-        };
-
-        let add = document.getElementById("add");
-        add.addEventListener("click",function(e){
-            e.preventDefault();
-
-        addToList(stock);  
-
-
-
-        });
-
-        let submit = document.getElementById("submit");
-        submit.addEventListener("click",function(e){
-            e.preventDefault();
-            app.num=1;
-            addToList(stock);
-        });
-    };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        };        
+    
+        return stock;
+};
 
 
 
 //submit
 
-    function submitForm(){        
+    function submitForm(){    
         
         function disFrequency(freq){
             if (freq === "monthly"){
@@ -162,7 +113,7 @@ function addToList(stock){
             newValue = (yield * newValue) + newValue
             };
             return newValue
-        };
+        }
     
         app.list.forEach(function(stock){
 
@@ -175,10 +126,13 @@ function addToList(stock){
 
         let finalValue = findFinalValue(value,yield,distributions);
 
-        print(ticker,finalValue,years);
+        
+
+        app.printList.push([ticker,finalValue,years]);
 
         });
 
+        print(app.printList)
     };
 
 
@@ -186,8 +140,18 @@ function addToList(stock){
 
 //print results
 
-    function print(ticker,finalValue,years){
+    function print(list){
+        document.getElementById("intro").style.display="none";
+        document.getElementById("form").style.display="none";
+        document.getElementById("end").style.display="flex";
+        
+        list.forEach(function(e){
+            ticker =e[0],
+            finalValue = e[1],
+            years = e[2]
+
         document.getElementById("result").textContent=`Your shares of ${ticker.toUpperCase()} will be worth $${finalValue.toFixed(2)} in ${years} years.`;
+        });
     };
 
 });

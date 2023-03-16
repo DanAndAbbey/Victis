@@ -47,7 +47,7 @@
 
 <!--form-->
 
-        <form id="form" action="post">
+        <form id="form">
 
             <h2>Dividend Calculator</h2>
             <div id="form-top" class="form-elements">
@@ -93,18 +93,18 @@
             </div>
 
             <div id="submitReset">
-                <button id="add">Add More</button>
-                <button onclick="stop();" id="submit">Submit</button>
+                <button id="done">Done</button>
+                <button id="submit">Submit</button>
                 <button type="reset" value="Reset">Reset</button>
             </div>
-        </form> 
+        </form>
+
+        <div id="end">
+            <p id="results"></p>
+        </div>
+        
     </section>
     </content>
-
-
-
-        <p id="result"></p>  
-        <p id="income-result"></p> 
     <footer><p id="footer">Victis Technologies &#169 2022-2023</p></footer>
 </body>
 <script src="../Scripts/finance.js"></script>

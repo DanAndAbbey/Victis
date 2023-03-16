@@ -15,7 +15,7 @@
     border: solid black 1px;
     border-radius: 10px;
     box-shadow: 0 0 2px;
-    width: 30%;
+    width: 45%;
 }
 
 input, select{
@@ -68,7 +68,11 @@ form{
     gap: 1em;
 }
 
-#add{
+#done{
+    display: none;
+}
+
+#end{
     display: none;
 }
 

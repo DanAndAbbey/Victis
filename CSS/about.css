@@ -1,0 +1,55 @@
+
+#about-main{
+    flex-direction: column;
+    background-color: #eeedee;
+}
+
+
+#about{
+    background-color: #fff;
+    padding-top: 5em;
+    padding-bottom: 3em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: center;
+    margin-bottom: 3em;
+}
+
+#email-container{
+    display: flex;
+    justify-content: center;
+}
+
+#email{
+    color: #808080;
+}
+
+#email:hover{
+    color: #000000;
+}
+#email:visited{
+    color: #000000;
+
+}
+
+/*desktop*/
+@media screen and (min-width: 1080px) {
+    
+    #about{
+        font-size: 25px;
+    }
+
+}
+
+/*tablet*/
+@media screen and (min-width: 850px) {
+    #about{
+        font-size: 25px;
+    }
+}
