@@ -1,79 +1,65 @@
+let app = {
+    list:[],
+    amountOfTimes: ""
+};
 
 window,addEventListener("DOMContentLoaded", function(e){
 
-    let app ={
-        list:[],
-        amountOfTimes: "",
-        printList:[]
-    };
-
-
     main();
+    
+});
 
 //intro
-
     function main(){
 
-        whichForm();
-
-        if (app.amountOfTimes === "multiple"){
-
-            multiple();
-        }
-        else if (app.amountOfTimes === "once"){
-            readStock()
-            submitForm();
-        }
-
-        else if (app.amountOfTimes === "done"){
-            submitForm()
-        }
-
-    };
-
-    function whichForm() {
-        
-
         let selectedButton = document.querySelectorAll("button[data-amount]");
-            selectedButton.forEach(function(button){
-                button.addEventListener("click",function(e){
-                    let button = e.currentTarget;
-                    app.amountOfTimes = button.getAttribute("data-amount");
-                    e.preventDefault()
+        selectedButton.forEach(function(button){
+            button.addEventListener("click",function(e){
+                let button = e.currentTarget;
+                app.amountOfTimes = button.getAttribute("data-amount");
 
-                    document.getElementById("intro").style.display="none";
-                    document.getElementById("form").style.display="flex";
-                    e.preventDefault();
+                document.getElementById("intro").style.display="none";
+                document.getElementById("form").style.display="flex";
+                e.preventDefault();
 
-                    if (app.amountOfTimes === "multiple"){
-                        document.getElementById("done").style.display="flex";
-                        e.preventDefault();
-        
-                    };
+                if (app.amountOfTimes === "multiple"){
+                    document.getElementById("done").style.display="flex";
+                }
             });
         });
+        listen()
+        alert("here")
     };
 
-    function multiple(){
-
-        let submit = document.getElementById("submit");
-        submit.addEventListener("click",function(e){
-            e.preventDefault();
-            pp.printList
-            stock = readStock();
-            addToList(stock);
-
-        });
+    function listen(){
 
         let done = document.getElementById("done");
-        done.addEventListener("click",function(e){
-            e.preventDefault();
+        done.addEventListener("click",function(){
+            repeat();
 
-            app.amountOfTimes = "done"
-            
         });
+        let submit = document.getElementById("submit");
+        submit.addEventListener("click",function(){
+            submit();
+        });
+
+    }
+
+
+
+
+    function repeat(){
+        readStock();
+        listen();  
     };
-    
+
+    function submit(){
+        readStock();
+        print();
+
+    };
+
+
 
     function readStock(){
 
@@ -84,17 +70,8 @@ window,addEventListener("DOMContentLoaded", function(e){
             yield: document.getElementById("yield").value,
             years: document.getElementById("years").value,
             frequency: document.getElementById("frequency").value
-        };        
-    
-        return stock;
-};
+        };
 
-
-
-//submit
-
-    function submitForm(){    
-        
         function disFrequency(freq){
             if (freq === "monthly"){
                 return 12
@@ -114,9 +91,7 @@ window,addEventListener("DOMContentLoaded", function(e){
             };
             return newValue
         }
-    
-        app.list.forEach(function(stock){
-
+        
         let ticker = (stock.symbol)
         let years = (stock.years)
         let yield = (parseFloat(stock.yield) * .01)/disFrequency(stock.frequency);
@@ -128,24 +103,18 @@ window,addEventListener("DOMContentLoaded", function(e){
 
         
 
-        app.printList.push([ticker,finalValue,years]);
-
-        });
-
-        print(app.printList)
-    };
-
-
+        (app.list).push([ticker,finalValue,years]);
+};
 
 
 //print results
 
-    function print(list){
+    function print(){
         document.getElementById("intro").style.display="none";
         document.getElementById("form").style.display="none";
         document.getElementById("end").style.display="flex";
         
-        list.forEach(function(e){
+        app.list.forEach(function(e){
             ticker =e[0],
             finalValue = e[1],
             years = e[2]
@@ -153,5 +122,3 @@ window,addEventListener("DOMContentLoaded", function(e){
         document.getElementById("result").textContent=`Your shares of ${ticker.toUpperCase()} will be worth $${finalValue.toFixed(2)} in ${years} years.`;
         });
     };
-
-});
