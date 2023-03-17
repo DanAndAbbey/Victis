@@ -1,20 +1,21 @@
 let app = {
     list:[],
-    listen: function(){
-        let selectedButton = document.querySelectorAll("button");
-        selectedButton.forEach(function(button){
-            button.addEventListener("click",function(e){
-                e.preventDefault();
-                button = e.currentTarget;
-    
-                let a = button.id;
-                action(a);    
-            });
-        });
-    }
 };
 
-app.listen();
+listen();
+
+function listen(){
+    let selectedButton = document.querySelectorAll("button");
+    selectedButton.forEach(function(button){
+        button.addEventListener("click",function(e){
+            e.preventDefault();
+            button = e.currentTarget;
+
+            let a = button.id;
+            action(a);    
+        });
+    });
+}
 
 function action(a){
 
@@ -27,15 +28,19 @@ function action(a){
 
         document.getElementById("intro").style.display="none";
         document.getElementById("form").style.display="flex";
-        document.getElementById("done").style.display="flex";
+        document.getElementById("add").style.display="flex";
     }
 
-    else if (a === "done"){
+    else if (a === "reset-button"){
+        document.getElementById("form").reset();
+    }
+
+    else if (a === "add"){
+        document.getElementById("form").reset();
         readStock();
     }
 
     else if (a === "submit"){
-        document.getElementById("done").style.display="flex";
         readStock();
         print(); 
     };
