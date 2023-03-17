@@ -7,7 +7,7 @@ let app = {
                 e.preventDefault();
                 button = e.currentTarget;
     
-                let a= button.id
+                let a = button.id;
                 action(a);    
             });
         });
@@ -16,16 +16,12 @@ let app = {
 
 app.listen();
 
-//intro
-
-
 function action(a){
 
     if (a === "one"){
         document.getElementById("intro").style.display="none";
         document.getElementById("form").style.display="flex";
     }
-
 
     else if (a === "multiple"){
 
@@ -42,7 +38,6 @@ function action(a){
         document.getElementById("done").style.display="flex";
         readStock();
         print(); 
-
     };
 };
 
@@ -59,14 +54,14 @@ function readStock(){
 
     function disFrequency(freq){
         if (freq === "monthly"){
-            return 12
+            return 12;
         }
         else if (freq === "quarterly"){
-            return 4
+            return 4;
         }
         else if (freq === "yearly"){
-            return 1
-        }
+            return 1;
+        };
     };
 
     function findFinalValue(value,yield,distributions){
@@ -74,14 +69,12 @@ function readStock(){
         for (let i = 0; i < distributions; i++){
         newValue = (yield * newValue) + newValue
         };
-        return newValue
-    }
+        return newValue;
+    };
 
     let yield = (parseFloat(stock.yield) * .01)/disFrequency(stock.frequency);
     let distributions = parseInt(stock.years * (disFrequency(stock.frequency)));
     let finalValue = findFinalValue(parseFloat(stock.price * stock.quantity),yield,distributions);
-
-    
 
     (app.list).push([stock.symbol,finalValue,stock.years]);
 };
@@ -96,12 +89,11 @@ function print(){
     document.getElementById("end").style.display="flex";
     
     app.list.forEach(function(stock){
-        ticker =stock[0];
-        finalValue = stock[1];
-        years = stock[2];
+        let ticker = stock[0];
+        let finalValue = stock[1];
+        let years = stock[2];
 
-        let newLine = "\n"
-        let message = (`Your shares of ${ticker.toUpperCase()} will be worth $${finalValue.toFixed(2)} in ${years} years.`);
+        let message = (`Your shares of ${ticker.toUpperCase()} will be worth $${finalValue.toFixed(2)} in ${years} years.\n`);
         end.append(message);
     });
 };
