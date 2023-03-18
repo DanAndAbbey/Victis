@@ -14,6 +14,7 @@ body{
     position: relative;
 }
 
+
 main{
     display: flex;
     justify-content: center;
@@ -37,6 +38,15 @@ header{
     margin-left: 1em;
     margin-right: 1em;
     flex: 1 1;
+}
+
+#title{
+    transition: all 3s ease-in-out;
+}
+
+#title:hover{
+    color: #00ffff;
+    font-size: 1.05em;
 
 }
 
@@ -48,6 +58,7 @@ button{
 button:hover{
     color: #808080;
 }
+
 
 h2{
     text-align: center;

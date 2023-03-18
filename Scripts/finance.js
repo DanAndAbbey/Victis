@@ -4,6 +4,10 @@ let app = {
 
 listen();
 
+function get(e){
+    return document.getElementById(e)
+}
+
 function listen(){
     let selectedButton = document.querySelectorAll("button");
     selectedButton.forEach(function(button){
@@ -20,24 +24,24 @@ function listen(){
 function action(a){
 
     if (a === "one"){
-        document.getElementById("intro").style.display="none";
-        document.getElementById("form").style.display="flex";
+        get("intro").style.display="none";
+        get("form").style.display="flex";
     }
 
     else if (a === "multiple"){
 
-        document.getElementById("intro").style.display="none";
-        document.getElementById("form").style.display="flex";
-        document.getElementById("add").style.display="flex";
+        get("intro").style.display="none";
+        get("form").style.display="flex";
+        get("add").style.display="flex";
     }
 
     else if (a === "reset-button"){
-        document.getElementById("form").reset();
+        get("form").reset();
     }
 
     else if (a === "add"){
-        document.getElementById("form").reset();
         readStock();
+        get("form").reset();
     }
 
     else if (a === "submit"){
@@ -49,12 +53,12 @@ function action(a){
 
 function readStock(){
     let stock = {
-        symbol: document.getElementById("symbol").value,
-        price: document.getElementById("price").value,
-        quantity: document.getElementById("quantity").value,
-        yield: document.getElementById("yield").value,
-        years: document.getElementById("years").value,
-        frequency: document.getElementById("frequency").value
+        symbol: get("symbol").value,
+        price: get("price").value,
+        quantity: get("quantity").value,
+        yield: get("yield").value,
+        years: get("years").value,
+        frequency: get("frequency").value
     };
 
     function disFrequency(freq){
@@ -88,10 +92,10 @@ function readStock(){
 //print results
 
 function print(){
-    const end = document.getElementById("result");
-    document.getElementById("intro").style.display="none";
-    document.getElementById("form").style.display="none";
-    document.getElementById("end").style.display="flex";
+    const end = get("result");
+    get("intro").style.display="none";
+    get("form").style.display="none";
+    get("end").style.display="flex";
     
     app.list.forEach(function(stock){
         let ticker = stock[0];
