@@ -88,11 +88,20 @@ function readStock(){
     (app.list).push([stock.symbol,finalValue,stock.years]);
 };
 
+function newElement(type,message,l){
+
+    const parentLoc = get(l)
+    const element = document.createElement(type);
+
+    element.classList.add("result");
+    element.textContent = message
+    parentLoc.appendChild(element);
+
+}
 
 //print results
 
 function print(){
-    const end = get("result");
     get("intro").style.display="none";
     get("form").style.display="none";
     get("end").style.display="flex";
@@ -103,6 +112,6 @@ function print(){
         let years = stock[2];
 
         let message = (`Your shares of ${ticker.toUpperCase()} will be worth $${finalValue.toFixed(2)} in ${years} years.\n`);
-        end.append(message);
+        newElement("p",message,"end");
     });
 };

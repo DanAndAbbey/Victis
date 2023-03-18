@@ -24,6 +24,4 @@ selectedButton.forEach(function(button){
 
         
     });
-
-
 });
