@@ -40,15 +40,6 @@ header{
     flex: 1 1;
 }
 
-#title{
-    transition: all .001s ease-in;
-}
-
-#title:hover{
-    font-size: 1.02em;
-    text-shadow: 0px 0px 100px #fff;
-}
-
 button{
     background: none;
     border: none;

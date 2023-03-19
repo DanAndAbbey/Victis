@@ -3,3 +3,7 @@
     background-image: url(../Images/louisville.jpg);
 }
 
+.darkMode{
+    background-color: #000000;
+    color: #fff;
+}

@@ -2,11 +2,14 @@ let app = {
     list:[],
 };
 
-listen();
-
 function get(e){
     return document.getElementById(e)
 }
+
+listen();
+
+
+//listens for clicks
 
 function listen(){
     let selectedButton = document.querySelectorAll("button");
@@ -20,6 +23,7 @@ function listen(){
         });
     });
 }
+//decides what to do next
 
 function action(a){
 
@@ -50,6 +54,7 @@ function action(a){
     };
 };
 
+//reads the form and does the math
 
 function readStock(){
     let stock = {
@@ -88,11 +93,13 @@ function readStock(){
     (app.list).push([stock.symbol,finalValue,stock.years]);
 };
 
-function newElement(type,message,l){
+//creates new element to print the results in
 
-    const parentLoc = get(l)
-    const element = document.createElement(type);
 
+function newElement(type,message,loc){
+
+    const parentLoc = get(loc)
+    element = document.createElement(type);
     element.classList.add("result");
     element.textContent = message
     parentLoc.appendChild(element);
@@ -111,7 +118,7 @@ function print(){
         let finalValue = stock[1];
         let years = stock[2];
 
-        let message = (`Your shares of ${ticker.toUpperCase()} will be worth $${finalValue.toFixed(2)} in ${years} years.\n`);
+        let message = (`Your shares of ${ticker.toUpperCase()} will be worth $${finalValue.toFixed(2)} in ${years} years.`);
         newElement("p",message,"end");
     });
 };
