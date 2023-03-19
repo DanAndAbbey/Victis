@@ -1,7 +1,3 @@
-const app = {
-    body: document.querySelector("body"),
-};
-
 function get(e){
     return document.getElementById(e)
 };
@@ -9,15 +5,16 @@ function get(e){
 //turns on dark mode
 
 function darkMode(){
-    app.body.removeAttribute("id");
-    app.body.classList.add("darkMode");
+    const body = document.querySelector("body");
+    body.removeAttribute("id");
+    body.classList.add("darkMode");
     let btn = document.querySelectorAll("button")
     btn.forEach(function(button){
         button.classList.add("darkMode");
     });
 };
 
-//creates the cnavas element
+//creates the canvas element
 
 function newElement(type,loc,i){
 
@@ -25,25 +22,31 @@ function newElement(type,loc,i){
     element = document.createElement(type);
     element.id=i
     parentLoc.appendChild(element);
-
 }
 
 function makeCanvas(){
     newElement("canvas","main","canvas");
-    get("canvas").setAttribute(`width`,`1500px`)
+    get("canvas").setAttribute(`width`,`1600px`)
     get("canvas").setAttribute(`height`,`800px`)
-}
+};
 
 //creates animations
 
 function draw(){
-    let ctx = get("canvas").getContext("2d");
+    canvas = get("canvas");
+    let ctx = canvas.getContext("2d");
     ctx.fillStyle = ("#fff");
-    ctx.fillText("Hello", 150, 150);
-
+    ctx.font = "100px lato"
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    ctx.fillText("Hello", canvas.width/2, canvas.height/2);
 }
 
-//listens for click
+//listens
+
+window,addEventListener("DOMContentLoaded", function(e){
+    makeCanvas();
+});
 
 let title = get("title");
 title.addEventListener("click",function(){
@@ -52,7 +55,6 @@ title.addEventListener("click",function(){
 
 function main(){
     darkMode();
-    makeCanvas();
     draw();
 };
 
