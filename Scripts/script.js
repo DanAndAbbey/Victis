@@ -20,8 +20,6 @@ selectedButton.forEach(function(button){
         let button = e.currentTarget;
         let link = button.getAttribute("data-link");
         let url =(`${link}.html`);
-        window.location.href=url;
-
-        
+        window.location.href=url;       
     });
 });

@@ -1,5 +1,5 @@
 let app = {
-    list:[],
+    list:[]
 };
 
 function get(e){
@@ -7,7 +7,6 @@ function get(e){
 }
 
 listen();
-
 
 //listens for clicks
 
@@ -23,6 +22,7 @@ function listen(){
         });
     });
 }
+
 //decides what to do next
 
 function action(a){
@@ -79,9 +79,9 @@ function readStock(){
     };
 
     function findFinalValue(value,yield,distributions){
-        let newValue = value
+        let newValue = value;
         for (let i = 0; i < distributions; i++){
-        newValue = (yield * newValue) + newValue
+        newValue = (yield * newValue) + newValue;
         };
         return newValue;
     };
@@ -95,7 +95,6 @@ function readStock(){
 
 //creates new element to print the results in
 
-
 function newElement(type,message,loc){
 
     const parentLoc = get(loc)
@@ -103,8 +102,7 @@ function newElement(type,message,loc){
     element.classList.add("result");
     element.textContent = message
     parentLoc.appendChild(element);
-
-}
+};
 
 //print results
 
