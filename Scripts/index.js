@@ -39,8 +39,21 @@ function draw(){
     ctx.font = "100px lato"
     ctx.textBaseline = "middle";
     ctx.textAlign = "center";
-    ctx.fillText("Hello", canvas.width/2, canvas.height/2);
-}
+
+    list=["Hello","and welcome to", "Victis Technologies."]
+    let i = 0;
+    let timer = setInterval(function(){
+        let message=list[i];
+        ctx.fillText(message, canvas.width/2, canvas.height/2); 
+        i++;
+
+        setTimeout(function(){
+            ctx.clearRect(0,0,1600,800 );
+        }, 900);
+        }, 4000);
+    
+};
+
 
 //listens
 
