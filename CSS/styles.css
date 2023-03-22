@@ -1,0 +1,343 @@
+:root {
+    font-family:  'lato', sans-serif;
+    font-size: 1.5em;
+}
+
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    line-height: 1.5;
+    min-height: 100vh;
+    position: relative;
+    margin: 0em;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 100%;
+    gap: 1em;
+}
+
+header{
+    display: flex;
+    position: relative;
+    top: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#title-left{
+    justify-content: left;
+    display: flex;
+    margin-left: 1em;
+    margin-right: 1em;
+    flex: 1 1;
+}
+
+
+
+#home-body{
+    background-image: url(../Images/louisville.jpg);
+}
+
+.darkMode{
+    background-color: #000000;
+    color: #fff;
+}
+#title{
+    color:#000000;
+    transition: all 3s ease-in;
+}
+
+#title:hover{
+    font-size: 1.05em;
+}
+
+button{
+    background: none;
+    border: none;
+}
+
+button:hover{
+    color: #808080;    
+}
+
+
+h2{
+    text-align: center;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.nav-button{
+    display: flex;
+    font-size: 1em;
+}
+
+#drop{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    gap: .5em;
+    padding-top: 1em;
+    
+}
+
+.project-button{
+    background: none;
+    border: none;
+    font-size: 1em;
+}
+
+footer{
+    font-size: .7em;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    margin-left: 1em; 
+}
+
+
+
+/*finance*/
+
+#oneormore{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: center;
+}
+
+.howmany{
+    background-color: #eeedee;
+    font-size: 1em;
+    border: solid black 1px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px;
+    width: 45%;
+}
+
+input, select{
+    border-radius: 5px;
+    border: solid black 1px;
+}
+
+section{
+    padding-bottom: .5em; 
+}
+
+content{
+    padding-bottom: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.5em;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+    width: 75%;
+}
+
+#intro{
+    display: flex;
+}
+
+#form{
+    display: none;
+}
+
+#form-center{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-elements{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
+
+#submitReset{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+    justify-content:flex-end;
+    gap: 1em;
+}
+
+#add{
+    display: none;
+}
+
+#end{
+    display: none;
+    flex-direction: column;
+}
+.result{
+    display: flex;
+}
+
+/*about*/
+
+#about-main{
+    flex-direction: column;
+background-color: #eeedee;
+}
+
+
+#about{
+    background-color: #fff;
+    padding-top: 5em;
+    padding-bottom: 3em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: center;
+    margin-bottom: 3em;
+}
+
+#email-container{
+    display: flex;
+    justify-content: center;
+}
+
+#email{
+    color: #808080;
+}
+
+#email:hover{
+    color: #000000;
+}
+#email:visited{
+    color: #000000;
+
+}
+
+
+/*desktop*/
+@media screen and (min-width: 900px) {
+    
+    main{
+        flex-direction: row;
+    }
+
+    header{
+        display: flex;
+        flex-direction: row;
+    }
+
+    #title-left{
+        font-size: 1.5em;
+    }
+
+    nav{
+        display: flex;
+        justify-content: right;
+        width: auto;
+        margin-right: 1em;
+    }
+    
+    .nav-button {
+        display: inline;
+        font-size: 1em;
+        color: #000000;
+    }
+
+    #form-container{
+        margin-top: 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 50%;
+        gap: .3em;
+        padding: 1em;
+        border: 2px solid #808080;
+        border-radius: 10px;
+        background: #fff;
+        box-shadow: 0px 0px 50px #808080;
+    }
+
+    #form-center{
+        gap: 1em;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: .3em;
+        width: 20em;
+    }
+
+/*about*/
+
+    #about{
+        font-size: 25px;
+    }
+}
+
+/*tablet*/
+@media screen and (min-width: 750px) {
+
+    main {
+        flex-direction: row;
+    }
+
+    #projects{
+        gap: 1px;
+    }
+
+    #title-left{
+        font-size: 1.5em;
+        justify-content: left;
+        display: flex;
+        margin-left: 1em;
+        margin-right: 1em;
+        flex: 1 2;
+    }
+
+    header{
+        display: flex;
+        flex-direction: row;
+    }
+
+    nav{
+        display: flex;
+        justify-content: right;
+        width: auto;
+
+    }
+    
+    .nav-button {
+        display: inline;
+        font-size: 1.5em;
+        font-size: 1.2em;
+    }
+
+/*about*/
+
+    #about{
+        font-size: 25px;
+    }
+}
