@@ -7,35 +7,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/styles.css" type="text/css">
     <link rel="stylesheet" href="../CSS/finance.css" type="text/css">
     <title>Finance | Victis Technologies</title>
 </head>
-<body id="body">
-
-    
+<body id="finance-body">
     <header>
         <div id="title-left"><p id="title">Victis Technologies</p></div>
-        <nav>
-            <button data-link="index" class="nav-button">Home</button>
-            <button data-link="about" class="nav-button">About</button>
-            <div id="dropbtn">
-                <button class="nav-button">Projects</button>
-                    <div id="drop">
-                        <button class="project-button" data-link="finance">Finance</button>
-                    </div>
-            </div>
+        <nav id="nav">
+            <button id="back" class="nav-button">Back Home</button>
         </nav>
     </header>
     <content>
 
-        <p>We are working to bring you a large kit of free tools to make your financial life easier.</p>
-
     <section id="form-container">
+        <button id="dividend-calculator">Dividend Calculator</button>
 
 <!--intro-->
-
         <form id="intro">
+            
+        </form>
+
+        <form id="dividend">
             <p>Would you like to compare multiple securites or just see the results of one?</p>
             <div id="oneormore">
                 <button id="one" data-amount="one" class="howmany">one</button>
@@ -77,7 +69,7 @@
                         <label for="years">How Many Years</label>
                         <input type="text" id="years">
                     </div>
-                </div>
+                </div>   
             </div>
 
             <div id="form-bottom" class="form-elements">
@@ -104,6 +96,4 @@
     <footer><p id="footer">Victis Technologies &#169 2022-2023</p></footer>
 </body>
 <script src="../Scripts/finance.js"></script>
-<script src="../Scripts/script.js"></script>
-
 </html>
