@@ -108,7 +108,7 @@ function colorChange(){
     };
 };
 
-function dropMenu2(){
+function projectmenu(){
 
     const btn = document.querySelectorAll(`button[class="projects"]`);
     btn.forEach(function(button){
@@ -123,12 +123,12 @@ function dropMenu2(){
     function getText(a){
         if (a === "finance"){
             return `We’re working on a large set of free tools to help you manage your finances.
-            These tools will make it easier to: Budget, Track your spending, Save for retirement, and Pay off debt`
+            These tools will make it easier to: Budget, Track your spending, Save for retirement, and Pay off debt.`
         }
         if (a === "drones"){
             return `AI-powered drones are being built to solve problems around the world. 
             These drones can be used for a variety of purposes, such as: Inspecting infrastructure, 
-            Delivering goods, Providing emergency services`
+            Delivering goods, Providing emergency services.`
         }
         if (a === "ai"){
             return `We harness the power of AI to: Help us to better understand climate change and 
@@ -139,12 +139,11 @@ function dropMenu2(){
     })
 };
 
-
 function main(){
     action("index")
     listen();
     dropMenu();
-    dropMenu2();
+    projectmenu();
 
     colorChange();
 };

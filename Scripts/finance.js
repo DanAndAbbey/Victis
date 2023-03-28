@@ -66,20 +66,31 @@ function financeAction(a){
 function readStock(){
     const stock = {
         symbol: get("symbol").value,
-        price: get("price").value,
-        quantity: get("quantity").value,
-        yield: get("yield").value,
-        years: get("years").value,
-        frequency: get("frequency").id
+        price: parseFloat(get("price").value),
+        quantity: parseFloat(get("quantity").value),
+        yield: parseFloat(get("yield").value),
+        years: parseFloat(get("years").value),
+        frequency: get("frequency").value
+    };
+
+    function getFrequency(a){
+        if(a === "monthly"){
+            return 12
+        }
+        else if(a === "quarterly"){
+            return 4
+        }
+        else if(a === "yearly"){
+            return 1
+        }
     };
 
     function findFinalValue(){
-        value = parseFloat(stock.price * stock.quantity);
-        const yield = (parseFloat(stock.yield) * .01)/stock.frequency;
-        const distributions = parseInt(stock.years * stock.frequency);
+        let value = (stock.price * stock.quantity);
+        let yield = (stock.yield * .01)/(getFrequency(stock.frequency));
+        let distributions = (stock.years * getFrequency(stock.frequency));
 
-
-        const newValue = value;
+        let newValue = value;
         for (let i = 0; i < distributions; i++){
         newValue = (yield * newValue) + newValue;
         };
@@ -88,7 +99,6 @@ function readStock(){
 
     (app.list).push([stock.symbol,findFinalValue(),stock.years]);
 };
-
 
 //print results
 
