@@ -112,6 +112,10 @@ nav{
     font-size: 1em;
 }
 
+#end{
+    text-align: center;
+}
+
 #footer{  
     justify-content: center;
     color: #fff;
@@ -229,6 +233,12 @@ form{
         color: #000;
         border-radius: 5px;
         border: solid #fff 1px;
+    }
+
+    #end{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
     }
 
     #form-container{
