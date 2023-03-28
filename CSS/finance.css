@@ -1,10 +1,11 @@
 :root {
     font-family:  'lato', sans-serif;
     font-size: 1.5em;
-    background-color: #000;
+    background-color: #005454;
 }
 
 #form-container{
+    color: #FFC98A;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +21,6 @@ body{
     min-height: 100vh;
     position: relative;
     margin: 0em;
-    color:#fff;
 
 }
 
@@ -37,7 +37,6 @@ header{
     position: relative;
     top: 0;
     padding-bottom: 1em;
-    background-color: #fff;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -53,12 +52,12 @@ header{
 .nav-button {
     display: inline;
     font-size: 1em;
-    color:#000;
+    color:#FFC98A;
 }
 
 
 #title{
-    color: #000;
+    color: #FFC98A;
     transition: color 3s ease-in-out;
 
 }
@@ -66,7 +65,7 @@ header{
 button{
     background: none;
     border: none;
-    color: #fff
+    color: #FFC98A
  
 }
 
@@ -118,7 +117,7 @@ nav{
 
 #footer{  
     justify-content: center;
-    color: #fff;
+    color: #FFC98A;
     font-size: .7em;
     bottom: 0;
     left: 0;
@@ -145,9 +144,11 @@ nav{
 }
 
 input, select{
-    color: #fff;
+    background-color: #005454;
+    color: #FFC98A;
     border-radius: 5px;
-    border: solid #fff 1px;
+    border: solid #FFC98A 1px;
+    fill:none;
 }
 
 section{
@@ -206,6 +207,7 @@ form{
     display: none;
     flex-direction: column;
 }
+
 .result{
     display: flex;
 }
@@ -230,9 +232,9 @@ form{
     }
 
     input, select{
-        color: #000;
+        color: #FFC98A;
         border-radius: 5px;
-        border: solid #fff 1px;
+        border: solid #FFC98A 1px;
     }
 
     #end{
@@ -248,24 +250,17 @@ form{
         justify-content: center;
         align-items: center;
         min-height: 5em;
-        color: #fff;
+        color: #FFC98A;
         width: 50%;
         gap: .3em;
         padding: 1em;
-        border-left: solid #fff 1px;
-        border-right: solid #fff 1px;
+        border-left: solid #FFC98A 1px;
+        border-right: solid #FFC98A 1px;
         border-radius: 1em;
-        }
-
-    #footer-container{
-        position: absolute;
-        width: 100%;
-        bottom: 0;
-        padding-top: 3em;
-        background-color: #fff;
     }
+
     #footer{
-        color: #000;
+        color: #FFC98A;
     }
 
     #form-center{
@@ -311,7 +306,6 @@ form{
         display: flex;
         justify-content: right;
         width: auto;
-
     }
     
     .nav-button {

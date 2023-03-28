@@ -121,4 +121,26 @@ function print(){
     });
 };
 
+function colorChange(){
+    let color;
+    const colors=[`#005454`,`#FFC98A`];
+    let i = 0;
+    title = setInterval(function(){
+            color=colors[i];
+            get("title").style.color=color;
+            i++;
+            i = check(i);
+        },8000);
+
+    function check(i){
+        if (i === 2){
+            return 0;
+        }
+        else {
+            return i;
+        };
+    };
+};
+
+colorChange()
 listen();

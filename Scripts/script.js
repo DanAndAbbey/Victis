@@ -43,13 +43,17 @@ function action(a){
     if (a === "index"){
         get("headTitle").textContent="Victis Technologies"
 
+        const btn = document.querySelectorAll(`button[class="nav-button"`);
+        btn.forEach(function(button){
+            button.style.color="#000"
+        });
         document.body.style.backgroundImage = "url(../Images/louisville.jpg)";
     }
     else if (a === "about"){
         get("headTitle").textContent="About | Victis Technologies"
         get("about-section").style.display="flex";
         main.id="about-main"
-        document.body.style.backgroundColor="#FFF"
+        document.body.style.backgroundColor="#FFC98A"
 
 
     }
@@ -89,7 +93,7 @@ function remove(){
 
 function colorChange(){
     let color;
-    const colors=[`#000000`,`#FFC98A`];
+    const colors=[`#005454`,`#FFC98A`];
     let i = 0;
     title = setInterval(function(){
             color=colors[i];

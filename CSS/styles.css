@@ -1,7 +1,7 @@
 :root {
     font-family:  'lato', sans-serif;
     font-size: 1.5em;
-    color: #40513B;
+    color: #005454;
 }
 
 body{
@@ -45,7 +45,7 @@ header{
 }
 
 #title{
-    color:#40513B;
+    color:#000;
     transition: color 3s ease-in-out;
 }
 
@@ -75,6 +75,7 @@ nav{
 }
 
 .nav-button{
+    color: #005454;
     display: flex;
     font-size: 1em;
     background: none;
@@ -150,7 +151,7 @@ nav{
 
 #project-desc{
     align-self: center;
-    width: 80%;
+    width: 50%;
     color: #FFC98A;
     display: none;
     margin-bottom: 3em;    
@@ -171,7 +172,7 @@ nav{
 /*about*/
 
 #about-info{
-    background-color: #fff;
+    background-color: #FFC98A;
     padding-top: 5em;
     padding-bottom: 3em;
     padding-left: 1em;
@@ -179,9 +180,10 @@ nav{
 }
 
 #contact{
-    border-top: solid #40513B .001em;
-    border-bottom: solid #40513B .001em;
-    background-color: #eeedee;
+    border-top: solid #000 .001em;
+    border-bottom: solid #000 .001em;
+    background-color: #005454;
+    color: #FFC98A;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -196,17 +198,8 @@ nav{
 }
 
 #email{
-    color: #808080;
+    color: #FFC98A;
 }
-
-#email:hover{
-    color: #40513B;
-}
-#email:visited{
-    color: #40513B;
-
-}
-
 
 /*desktop*/
 @media screen and (min-width: 900px) {
@@ -240,7 +233,7 @@ nav{
     .nav-button {
         display: inline;
         font-size: 1em;
-        color: #40513B;
+        color: #005454;
     }
 /*about*/
     #project-info{
