@@ -45,7 +45,6 @@ header{
 }
 
 #title{
-    color:#000;
     transition: color 3s ease-in-out;
 }
 
@@ -172,6 +171,7 @@ nav{
 /*about*/
 
 #about-info{
+    color: #005454;
     background-color: #FFC98A;
     padding-top: 5em;
     padding-bottom: 3em;

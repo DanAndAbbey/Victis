@@ -41,19 +41,21 @@ function action(a){
     remove()
 
     if (a === "index"){
+        document.body.style.backgroundImage = "url(../Images/louisville.jpg)";
         get("headTitle").textContent="Victis Technologies"
-
         const btn = document.querySelectorAll(`button[class="nav-button"`);
         btn.forEach(function(button){
             button.style.color="#000"
         });
-        document.body.style.backgroundImage = "url(../Images/louisville.jpg)";
+        get("title").style.color="#000"
     }
     else if (a === "about"){
         get("headTitle").textContent="About | Victis Technologies"
         get("about-section").style.display="flex";
         main.id="about-main"
         document.body.style.backgroundColor="#FFC98A"
+        get("title").style.color="#005454"
+
 
 
     }
@@ -148,8 +150,6 @@ function main(){
     listen();
     dropMenu();
     projectmenu();
-
     colorChange();
 };
-remove();
 main();

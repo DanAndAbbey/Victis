@@ -4,14 +4,6 @@
     background-color: #005454;
 }
 
-#form-container{
-    color: #FFC98A;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
 body{
     background-repeat: no-repeat;
     background-size: cover;
@@ -148,7 +140,14 @@ input, select{
     color: #FFC98A;
     border-radius: 5px;
     border: solid #FFC98A 1px;
-    fill:none;
+}
+
+#form-container{
+    color: #FFC98A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 section{
@@ -230,13 +229,6 @@ form{
         width: auto;
         margin-right: 1em;
     }
-
-    input, select{
-        color: #FFC98A;
-        border-radius: 5px;
-        border: solid #FFC98A 1px;
-    }
-
     #end{
         text-align: center;
         justify-content: center;
