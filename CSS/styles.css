@@ -1,5 +1,5 @@
 :root {
-    font-family:  'lato', sans-serif;
+    font-family:  'lato', sans-serif, serif;
     font-size: 1.5em;
     color: #005454;
 }
@@ -39,14 +39,20 @@ header{
     flex: 1 1;
 }
 
-.darkMode{
-    background-color: #000000;
-    color: #000000;
-}
-
 #title{
     transition: color 3s ease-in-out;
 }
+
+#canvas-container{
+    display: none;
+    justify-content: center;
+}
+
+#canvas{
+    display: none;
+    position: absolute;
+    background-color: #005454;
+};
 
 button{
     background: none;
@@ -81,6 +87,10 @@ nav{
     border: none;
 }
 
+.nav-button:hover{
+    color: #808080;
+}
+
 #drop{
     display: none;
     flex-direction: column;
@@ -88,12 +98,6 @@ nav{
     gap: .5em;
     padding-top: 1em;
     
-}
-
-.project-button{
-    background: none;
-    border: none;
-    font-size: 1em;
 }
 
 #footer{    
@@ -105,6 +109,7 @@ nav{
     position: absolute;
     margin-left: 1em; 
 }
+
 /*Projects*/
 
 #projects-section{
@@ -139,9 +144,13 @@ nav{
     align-items: center;
     justify-content: center;
 }
+
 .projects{
     color: #FFC98A;
     font-size: 1em;
+    background-color: none;
+    background: none;
+    border: none;
 }
 
 .projects:focus{
@@ -180,8 +189,6 @@ nav{
 }
 
 #contact{
-    border-top: solid #000 .001em;
-    border-bottom: solid #000 .001em;
     background-color: #005454;
     color: #FFC98A;
     display: flex;
@@ -203,6 +210,7 @@ nav{
 
 /*desktop*/
 @media screen and (min-width: 900px) {
+
     header{
         display: flex;
         flex-direction: row;
@@ -218,6 +226,17 @@ nav{
         align-items: center;
         justify-content: center;
     }
+
+    #canvas-container{
+        display: none;
+        justify-content: center;
+    }
+    
+    #canvas{
+        display: flex;
+        position: absolute;
+        background-color: #005454;
+    };
 
     #title-left{
         font-size: 1.5em;
@@ -235,7 +254,9 @@ nav{
         font-size: 1em;
         color: #005454;
     }
+
 /*about*/
+    
     #project-info{
         display: flex;
         flex-direction: column;
@@ -248,6 +269,7 @@ nav{
         border-left: solid #005454 1px;
         border-right: solid #005454 1px;;
     }
+
     #project-desc{
         align-self: center;
         width: 50%;
@@ -276,6 +298,17 @@ nav{
         margin-right: 1em;
         flex: 1 2;
     }
+
+    #canvas-container{
+        display: none;
+        justify-content: center;
+    }
+    
+    #canvas{
+        display: flex;
+        position: absolute;
+        background-color: #005454;
+    };
 
     header{
         display: flex;
