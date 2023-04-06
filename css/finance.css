@@ -1,0 +1,308 @@
+:root {
+    font-family:  'lato', sans-serif;
+    font-size: 1.5em;
+    background-color: #005454;
+}
+
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    line-height: 1.5;
+    min-height: 100vh;
+    position: relative;
+    margin: 0em;
+
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    min-width: 100%;
+    gap: 1em;
+}
+
+
+header{
+    display: flex;
+    position: relative;
+    top: 0;
+    padding-bottom: 1em;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#title-left{
+    justify-content: left;
+    display: flex;
+    margin-left: 1em;
+    margin-right: 1em;
+    flex: 1 1;
+}
+.nav-button {
+    display: inline;
+    font-size: 1em;
+    color:#FFC98A;
+}
+
+
+#title{
+    color: #FFC98A;
+    transition: color 3s ease-in-out;
+
+}
+
+button{
+    background: none;
+    border: none;
+    color: #FFC98A
+ 
+}
+
+button:hover{
+    color: #808080;    
+}
+
+#about-section {
+    display:none;
+    flex-direction: column;
+}
+
+h2{
+    text-align: center;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+.nav-button{
+    display: flex;
+    font-size: 1em;
+    background: none;
+    border: none;
+}
+
+#drop{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    gap: .5em;
+    padding-top: 1em;
+    
+}
+
+.project-button{
+    background: none;
+    border: none;
+    font-size: 1em;
+}
+
+#end{
+    text-align: center;
+}
+
+#footer{  
+    justify-content: center;
+    color: #FFC98A;
+    font-size: .7em;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    margin-left: 1em; 
+}
+
+/*finance*/
+
+#oneormore{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: center;
+}
+
+.howmany{
+    font-size: 1em;
+    width: 45%;
+}
+
+#dividend-calculator{
+    font-size: 1em;
+}
+
+input, select{
+    background-color: #005454;
+    color: #FFC98A;
+    border-radius: 5px;
+    border: solid #FFC98A 1px;
+}
+
+#form-container{
+    color: #FFC98A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+section{
+    padding-bottom: .5em; 
+}
+
+content{
+    padding-bottom: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4em;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: .3em;
+    width: 75%;
+}
+
+#dividend{
+    display: none;
+}
+
+#form{
+    display: none;
+}
+
+#form-center{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-elements{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
+
+#submitReset{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+    justify-content:flex-end;
+    gap: 1em;
+}
+
+#add{
+    display: none;
+}
+
+#end{
+    text-align: center;
+    width: 90%;
+    display: none;
+    flex-direction: column;
+}
+
+.result{
+    display: flex;
+}
+
+
+/*desktop*/
+@media screen and (min-width: 900px) {
+    header{
+        display: flex;
+        flex-direction: row;
+    }
+
+    #title-left{
+        font-size: 1.5em;
+    }
+
+    nav{
+        display: flex;
+        justify-content: right;
+        width: auto;
+        margin-right: 1em;
+    }
+    #end{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #form-container{
+        margin-top: 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 5em;
+        color: #FFC98A;
+        width: 50%;
+        gap: .3em;
+        padding: 1em;
+        border-left: solid #FFC98A 1px;
+        border-right: solid #FFC98A 1px;
+        border-radius: 1em;
+    }
+
+    #footer{
+        color: #FFC98A;
+    }
+
+    #form-center{
+        gap: 1em;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: .3em;
+        width: 20em;
+    }
+}
+
+/*tablet*/
+@media screen and (min-width: 750px) {
+
+    main {
+        flex-direction: column;
+    }
+
+    #projects{
+        gap: 1px;
+    }
+
+    #title-left{
+        font-size: 1.5em;
+        justify-content: left;
+        display: flex;
+        margin-left: 1em;
+        margin-right: 1em;
+        flex: 1 2;
+    }
+
+    header{
+        display: flex;
+        flex-direction: row;
+    }
+
+    nav{
+        display: flex;
+        justify-content: right;
+        width: auto;
+    }
+    
+    .nav-button {
+        display: inline;
+        font-size: 1.5em;
+        font-size: 1.2em;
+    }
+}
