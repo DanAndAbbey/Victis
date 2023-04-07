@@ -3,26 +3,11 @@
     font-size: 1.5em;
 }
 
-body{
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
-    line-height: 1.5;
-    min-height: 100vh;
-    position: relative;
-    margin: 0em;
-}
-
 main{
     display: flex;
     justify-content: center;
     min-width: 100%;
     gap: 1em;
-}
-
-#home{
-    justify-content: center;
 }
 
 header{
@@ -43,34 +28,13 @@ header{
     flex: 1 1;
 }
 
-#canvas-container{
-    display: none;
-    justify-content: center;
-}
-
-
-
-#canvas{
-    display: none;
-    position: absolute;
-};
-
 button{
-    background: none;
+    background: flex;
     border: none; 
 }
 
 button:hover{
     color: #808080;    
-}
-
-#about-section {
-    display:none;
-    flex-direction: column;
-}
-
-h2{
-    text-align: center;
 }
 
 nav{
@@ -93,7 +57,7 @@ nav{
 }
 
 #drop{
-    display: none;
+    display: flex;
     flex-direction: column;
     position: absolute;
     gap: .5em;
@@ -110,89 +74,6 @@ nav{
     margin-left: 1em; 
 }
 
-/*Projects*/
-
-#projects-section{
-    margin-top: 5em;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-
-#projects-container{
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    padding-top: 3em;
-    padding-bottom: 5em;
-
-}
-#projects-btn-container{
-    display: flex;
-    flex-direction: row;
-    gap: 1em;
-    justify-content: center;
-}
-
-#project-info-con{
-    padding-top: 1em;
-    padding-bottom: 1em;
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.projects{
-    font-size: 1em;
-    background-color: none;
-    background: none;
-    border: none;
-}
-
-
-#project-desc{
-    align-self: center;
-    width: 50%;
-    display: none;
-    margin-bottom: 3em;    
-}
-
-#project-info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-left: 1em;
-    padding-right: 1em;
-}
-
-/*about*/
-
-#about-info{
-    padding-top: 5em;
-    padding-bottom: 3em;
-    padding-left: 1em;
-    padding-right: 1em;
-}
-
-#contact{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: center;
-    padding-bottom: 3em;
-    margin-bottom: 2em;
-}
-
-#email-container{
-    display: flex;
-    justify-content: center;
-}
-
 /*desktop*/
 @media screen and (min-width: 900px) {
 
@@ -200,26 +81,6 @@ nav{
         display: flex;
         flex-direction: row;
     }
-
-    #project-info-con{
-        padding-top: 1em;
-        padding-bottom: 1em;
-        display: flex;
-        width: 80%;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #canvas-container{
-        display: none;
-        justify-content: center;
-    }
-    
-    #canvas{
-        display: flex;
-        position: absolute;
-    };
 
     #title-left{
         font-size: 1.5em;
@@ -232,29 +93,12 @@ nav{
         margin-right: 1em;
     }
 
-.nav-button {
-    display: inline;
-    font-size: 1em;
-}
+    .nav-button {
+        display: inline;
+        font-size: 1em;
+    }
 
-/*about*/
 
-#project-info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    padding-left: 1em;
-    padding-right: 1em;
-}
-
-#project-desc{
-    align-self: center;
-    width: 50%;
-    display: none;
-    margin-bottom: 3em;    
-}
 }
 
 /*tablet*/
@@ -264,11 +108,6 @@ main {
     flex-direction: column;
 }
 
-#projects{
-    gap: 1px;
-}
-
-
 #title-left{
     font-size: 1.5em;
     justify-content: left;
@@ -277,16 +116,6 @@ main {
     margin-right: 1em;
     flex: 1 2;
 }
-
-#canvas-container{
-    display: none;
-    justify-content: center;
-}
-
-#canvas{
-    display: flex;
-    position: absolute;
-};
 
 header{
     display: flex;
@@ -306,10 +135,5 @@ nav{
     font-size: 1.2em;
 }
 
-/*about*/
-
-#about-info{
-    font-size: 25px;
-}
 }
 

@@ -6,13 +6,13 @@ let finance: {
     list:[]
 };
 
-function financeGet(e:string):any{
+function get(e:string):any{
     return document.getElementById(e);
 };
 
 //listens for clicks
 
-function financeListen():void{
+function listen():void{
     const selectedButton: any  = document.querySelectorAll("button");
     selectedButton.forEach(function(button){
         button.addEventListener("click",function(e: any){
@@ -20,7 +20,7 @@ function financeListen():void{
             const btn: any = e.currentTarget;
 
             const a = button.id;
-            financeAction(a);
+            action(a);
         });
     });
 }
@@ -28,10 +28,10 @@ function financeListen():void{
 //decides what to do next
 
 function financeAction(a: string): void{
-    const add: any = financeGet("add");
-    let dc: any = financeGet("dividend-calculator");
-    let d: any = financeGet("dividend");
-    let f: any = financeGet("form");
+    const add: any = get("add");
+    let dc: any = get("dividend-calculator");
+    let d: any = get("dividend");
+    let f: any = get("form");
 
     if (a === "dividend-calculator"){
         d.style.display="flex";
@@ -75,12 +75,12 @@ function readStock(){
         frequency:string,  
         //growth: number  
     }={
-        symbol: financeGet("symbol").value,
-        price: parseFloat(financeGet("price").value),
-        quantity: parseFloat(financeGet("quantity").value),
-        sYield: parseFloat(financeGet("yield").value),
-        years: parseFloat(financeGet("years").value),
-        frequency: financeGet("frequency").value,
+        symbol: get("symbol").value,
+        price: parseFloat(get("price").value),
+        quantity: parseFloat(get("quantity").value),
+        sYield: parseFloat(get("yield").value),
+        years: parseFloat(get("years").value),
+        frequency: get("frequency").value,
         //growth: get("growth").value
     };
 
@@ -130,9 +130,9 @@ function readStock(){
 //print results
 
 function print(){
-    financeGet("dividend").style.display="none";
-    financeGet("form").style.display="none";
-    financeGet("end").style.display="flex";
+    get("dividend").style.display="none";
+    get("form").style.display="none";
+    get("end").style.display="flex";
 
 
     
@@ -146,8 +146,8 @@ function print(){
         const message: string = (`Your shares of ${ticker.toUpperCase()} will be worth $${finalValue.toFixed(2)} in ${years} years.`);
 
         element.textContent = message;
-        financeGet("end").appendChild(element);
+        get("end").appendChild(element);
     });
 };
 
-financeListen();
+listen();

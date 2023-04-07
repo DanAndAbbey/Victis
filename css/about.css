@@ -1,0 +1,85 @@
+body{
+    color: #000;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    line-height: 1.5;
+    min-height: 100vh;
+    position: relative;
+    margin: 0em;
+}
+
+#about-section {
+    display:flex;
+    flex-direction: column;
+}
+
+h2{
+    text-align: center;
+}
+
+#about-info{
+    padding-top: 5em;
+    padding-bottom: 3em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: center;
+    padding-bottom: 3em;
+    margin-bottom: 2em;
+}
+
+#email-container{
+    display: flex;
+    justify-content: center;
+}
+
+#email{
+    color: #000;
+
+}
+
+/*desktop*/
+@media screen and (min-width: 900px) {
+
+    #project-info-con{
+        padding-top: 1em;
+        padding-bottom: 1em;
+        display: flex;
+        width: 80%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #project-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        padding-left: 3em;
+        padding-right: 3em;
+        border-left: solid #000 1px;
+        border-right: solid #000 1px;
+    }
+
+    #project-desc{
+        align-self: center;
+        width: 50%;
+        display: none;
+        margin-bottom: 3em;  
+        text-align: center;
+    }
+
+    #about-info{
+        font-size: 25px;
+    }
+}

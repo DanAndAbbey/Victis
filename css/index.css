@@ -1,0 +1,35 @@
+body{
+    color: #000;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    line-height: 1.5;
+    min-height: 100vh;
+    position: relative;
+    margin: 0em;
+}
+
+#canvas-container{
+    display: flex;
+    justify-content: center;
+}
+
+#canvas{
+    display: flex;
+    position: absolute;
+};
+
+/*desktop*/
+@media screen and (min-width: 900px) {
+
+    #canvas-container{
+        display: flex;
+        justify-content: center;
+    }
+    
+    #canvas{
+        display: flex;
+        position: absolute;
+    };
