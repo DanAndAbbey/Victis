@@ -8,32 +8,42 @@ function all(e: string): any{
     return document.querySelectorAll(e);
 };
 
+//builds canvas
+
+function createCanvas():void{
+    const container: any = get(`container`)
+    const canvas: any = document.createElement(`canvas`);
+    canvas.id="canvas";
+    container.appendChild(canvas);
+}
+
 //Controls the animations
 
-function animate(a: boolean): void{
-    if (a === true){
-        const can: any = get("canvas");
-        const width: string = "1200";
-        const height: string = "600";
-        get("canvas-container").style.display="flex";
-        get("canvas").setAttribute(`width`,width);
-        get("canvas").setAttribute(`height`,height);
-        const ctx: any = can.getContext("2d");
-        ctx.strokeStyle="#FFF";
-    
-        function random(): number{
-            return Math.floor(Math.random() * 10000);
-        };
-    
-        let timer = setInterval(draw, 1000);
-    
-        function draw(): void{
-            ctx.beginPath();
-            ctx.lineTo(random(), random());
-            ctx.stroke()
-        };
-    }
-    else{
-        console.log("");
+function animate(): void{
+    const canvas: any = get(`canvas`);
+    const ctx: any = canvas.getContext("2d");
+    ctx.strokeStyle="#fff";
+
+    let timer = setInterval(draw, 5000);
+
+    let n: number = 0;
+
+    function draw(): void{
+        count()
+        ctx.beginPath();
+        ctx.moveTo( , );
+        ctx.lineTo( , );
+        ctx.stroke()
+    };
+
+    function count(): void{
+        n++
+        console.log(n)
+        if (n === 5){
+            clearInterval(timer)
+            main.removeChild(canvas)
+        }
     };
 };
+
+createCanvas();

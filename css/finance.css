@@ -4,18 +4,6 @@
     background-color: #005454;
 }
 
-body{
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
-    line-height: 1.5;
-    min-height: 100vh;
-    position: relative;
-    margin: 0em;
-
-}
-
 main{
     display: flex;
     justify-content: center;

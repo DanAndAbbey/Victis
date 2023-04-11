@@ -13,19 +13,17 @@ function all(e: string): any{
 //listen for clicks
 
 function listen(): void{
-    const selectedButton: any = document.querySelectorAll(`button[class="nav-button"]`);
-    selectedButton.forEach(function(button): void{
+    const selectedButton: any = all(`button[class="nav-button"]`);
+    selectedButton.forEach(function(button: any): void{
         
         button.addEventListener("click",function(e: any){
             e.preventDefault();
             const btn: any = e.currentTarget;
-            let url: string = btn.id
+            const url: string = btn.id
 
-            window.location.href = `../html/${url}.html`
+            window.location.href = url
         });
     });
 };
 
 listen();
-
-

@@ -16,7 +16,7 @@ function listen() {
             e.preventDefault();
             var btn = e.currentTarget;
             var url = btn.id;
-            window.location.href = "".concat(url, ".html");
+            window.location.href = url;
         });
     });
 }

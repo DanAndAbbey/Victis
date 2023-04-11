@@ -7,32 +7,37 @@ function all(e) {
     return document.querySelectorAll(e);
 }
 ;
+//builds canvas
+function createCanvas() {
+    var container = get("container");
+    var canvas = document.createElement("canvas");
+    canvas.id = "canvas";
+    container.appendChild(canvas);
+}
 //Controls the animations
-function animate(a) {
-    if (a === true) {
-        var can = get("canvas");
-        var width = "1200";
-        var height = "600";
-        get("canvas-container").style.display = "flex";
-        get("canvas").setAttribute("width", width);
-        get("canvas").setAttribute("height", height);
-        var ctx_1 = can.getContext("2d");
-        ctx_1.strokeStyle = "#FFF";
-        function random() {
-            return Math.floor(Math.random() * 10000);
-        }
-        ;
-        var timer = setInterval(draw, 1000);
-        function draw() {
-            ctx_1.beginPath();
-            ctx_1.lineTo(random(), random());
-            ctx_1.stroke();
-        }
-        ;
+function animate() {
+    var canvas = get("canvas");
+    var ctx = canvas.getContext("2d");
+    ctx.strokeStyle = "#fff";
+    var timer = setInterval(draw, 5000);
+    var n = 0;
+    function draw() {
+        count();
+        ctx.beginPath();
+        ctx.moveTo();
+        ctx.lineTo();
+        ctx.stroke();
     }
-    else {
-        console.log("");
+    ;
+    function count() {
+        n++;
+        console.log(n);
+        if (n === 5) {
+            clearInterval(timer);
+            main.removeChild(canvas);
+        }
     }
     ;
 }
 ;
+createCanvas();

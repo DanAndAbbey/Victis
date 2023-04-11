@@ -1,10 +1,18 @@
 :root {
     font-family:  'lato', sans-serif, serif;
     font-size: 1.5em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    line-height: 1.5;
+    min-height: 100vh;
+    position: relative;
 }
 
 main{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     min-width: 100%;
     gap: 1em;
@@ -17,8 +25,8 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5em;
 }
-
 
 #title-left{
     justify-content: left;
@@ -29,7 +37,7 @@ header{
 }
 
 button{
-    background: flex;
+    background: none;
     border: none; 
 }
 
@@ -44,12 +52,9 @@ nav{
     gap: 1em;
 }
 
-
 .nav-button{
     display: flex;
     font-size: 1em;
-    background: none;
-    border: none;
 }
 
 .nav-button:hover{
